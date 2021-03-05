@@ -16,28 +16,26 @@ public class SingleConnection {
 
 	}
 
-
 	public SingleConnection() {
 
 		conectar();
 
 	}
 
-
 	private static void conectar() {
 
 		try {
-			
-				if (connection == null) {
-					
-					Class.forName("org.postgresql.Driver");
-					connection = DriverManager.getConnection(url, user, password);
-					connection.setAutoCommit(false);
-					System.out.println("Conexão bem sucedida!");
-				}
-			
+
+			if (connection == null) {
+
+				Class.forName("org.postgresql.Driver");
+				connection = DriverManager.getConnection(url, user, password);
+				connection.setAutoCommit(false);
+				System.out.println("Conexão bem sucedida!");
+			}
+
 		} catch (Exception e) {
-		
+
 			e.printStackTrace();
 		}
 
